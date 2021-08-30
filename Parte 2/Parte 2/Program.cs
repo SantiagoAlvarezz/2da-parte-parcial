@@ -1,4 +1,9 @@
 ﻿using System;
+using System.Collections.Generic;
+using System.Diagnostics;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
 
 namespace Parte_2
 {
@@ -6,7 +11,15 @@ namespace Parte_2
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Hello World!");
+            Stopwatch s = new Stopwatch();
+            s.Start();
+            SearchPath.CreateMaze();
+            SearchPath.BFS();
+            SearchPath.CreatePath();
+            SearchPath.Imprimir();
+            s.Stop();
+            Console.WriteLine("Breadth-first search took " + s.ElapsedMilliseconds + " ms");
+            Console.WriteLine();
         }
     }
 }
